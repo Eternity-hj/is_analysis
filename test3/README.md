@@ -65,17 +65,25 @@ class Return{
     Int book_id
     Int ISBN
 }
+class Money{
+    Float money
+    Int days
+}
+User "1" <|-- "1..*" Reader
+User "1" <|-- "5" Book_manager:have
+User "1" <|-- "2" System_manager:have
 Reader "1" -- "0..20" Borrow:borrowe_book
 Reader "1" -- "0..20" Reservation:reservation_book
 Reader "1" -- "0..20" Return:return_book
 Book_manager"1" -- "*" Book:add/decrease
 System_manager "1" -- "*" Book:add/decrease
 Book_manager "1" -- "*" Reader:add/decrease
+Return *-- Money
 @enduml
 </code>
 </pre>
 #### 1.2 类图如下：
-![图书管理系统类图](./img/classpho2.png)
+![图书管理系统类图](./img/classpho3.png)
 #### 1.4 类图说明：
 <br>
 1.User类：包括用户ID，用户名，用户密码，用户级别等信息，不同的用户级别代表不同的用户身份，而具体的用户身份可以分为一班用户，图书管理员，系统管理员。    
@@ -86,7 +94,8 @@ Book_manager "1" -- "*" Reader:add/decrease
 5.Book类：图书类，包含书籍名称，作者，ID，ISBN，价格，是否被约等信息，图书管理员与系统管理员可以直接对其操作，增加删除修改图书信息。  
 6.Return类：还书类，包含读者ID，读者姓名，还书时间，还书名称等信息，一个用户一次至多可以还20本书。  
 7.Borrow类：借书类，包含读者ID，读者姓名，还书时间，借书名称等信息，一个用户一次至多可以借20本书。  
-8.Reservations类：预定类，包含读者ID，读者姓名，还书时间，预定书籍名称等信息，一个用户一次至多可以预定20本书。  
+8.Reservations类：预定类，包含读者ID，读者姓名，还书时间，预定书籍名称等信息，一个用户一次至多可以预定20本书。 
+9.Money类：罚款类，包括罚金和逾期天数属性，罚款金额根据逾期天数而定。 
 </br>
 ## 2.图书管理系统的对象图
 #### 2.1 类User的对象图
@@ -262,4 +271,20 @@ object Reservation {
 对象图如下：
 
 ![Book](./img/Reservation.png)
+
+#### 2.10 类Money的对象图
+源码如下：
+<pre>
+<code>
+@startuml
+object Money {
+    money = 1.5
+    days = 3
+}
+@enduml
+</code>
+</pre>
+对象图如下：
+
+![Money](./img/Money.png)
 
