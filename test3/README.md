@@ -272,7 +272,7 @@ object Reservation {
 
 ![Book](./img/Reservation.png)
 
-#### 2.10 类Money的对象图
+#### 2.9 类Money的对象图
 源码如下：
 <pre>
 <code>
