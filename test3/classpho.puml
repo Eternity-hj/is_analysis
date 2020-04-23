@@ -1,0 +1,76 @@
+@startuml
+class User {
+    Int user_id
+    Int user_class
+    String user_name
+    String password
+    String sex
+    Int age
+}
+class Reader{
+    Int age
+    Int grade
+    String  major
+    Int borrowed_book
+}
+class Book_manager{
+    Float salary
+    Int salary_id
+    String work_time
+    String job_time
+}
+class System_manager{
+    Float salary
+    Int salary_id
+    Int log_times
+}
+
+class Book {
+    String book_name
+    String author
+    String book_id
+    Borrow borrowed
+    String ISBN
+    Float money
+    String type
+    Reservation reservated
+}
+class Borrow{
+    Int book_id
+    Int user_id
+    String user_name
+    String book_name
+    String ISBN
+    Date time
+}
+class Reservation{
+    Int book_id
+    Int user_id
+    String user_name
+    String ISBN
+    String book_name
+    Date res_time
+}
+class Return{
+    Int user_id
+    String user_name
+    Date time
+    String book_name
+    Int book_id
+    Int ISBN
+}
+class Money{
+    Float money
+    Int days
+}
+User "1" <|-- "1..*" Reader
+User "1" <|-- "5" Book_manager:have
+User "1" <|-- "2" System_manager:have
+Reader "1" -- "0..20" Borrow:borrowe_book
+Reader "1" -- "0..20" Reservation:reservation_book
+Reader "1" -- "0..20" Return:return_book
+Book_manager"1" -- "*" Book:add/decrease
+System_manager "1" -- "*" Book:add/decrease
+Book_manager "1" -- "*" Reader:add/decrease
+Return *-- Money
+@enduml

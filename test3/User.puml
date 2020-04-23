@@ -1,0 +1,6 @@
+@startuml
+object Money {
+    money = 1.5
+    days = 3
+}
+@enduml
