@@ -104,7 +104,7 @@
 {
     "info": "登录成功",
     "data": {
-        "username": "honora",
+        "user_name": "honora",
         "class": "学生",
         "page_url":"https://api.bookmanage.com/v1/pages/student_page"
     },
@@ -149,18 +149,18 @@
 |参数名称|必填|说明|
 | ----- | ----- | ------|
 |user_id|是|确定读者的编号是否符合借阅条件|
-|username|是|确定读者的姓名信息|
+|user_name|是|确定读者的姓名信息|
 |book_id|是|获取书籍在图书馆的编号|
-|bookname|是|确定书籍的名称|
+|book_name|是|确定书籍的名称|
 - 返回实例：
 <pre>
 <code>
 {
     "info": "借书成功",
     "data": {
-        "username": "honora",
+        "user_name": "honora",
         "user_id": "1422",
-        "bookname": "追风筝的人",
+        "book_name": "追风筝的人",
         "book_id": "4564757",
     },
     "code": 200
