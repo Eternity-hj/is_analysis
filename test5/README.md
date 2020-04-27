@@ -172,7 +172,7 @@
 |参数名称|说明|
 | ----- | ----- |
 |info|返回给用户的信息|
-|data|借书的联系信息|
+|data|书籍的借书关联信息|
 |code|返回码|
 ### 3.原型图设计链接
 https://eternity-hj.github.io/is_analysis_pages/test5/ui/start.html#g=1&p=index
