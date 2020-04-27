@@ -88,7 +88,7 @@
 - API接口如下：
  1. 获取登录信息API
 - 功能：获取登录人员的用户名及密码信息，判断数据库中是否拥有该用户的数据。
-- 请求地址：https://api.bookmanage.com/v1/users
+- 请求地址：https://bookmanage.com/v1/api/getUserlist
 - 请求方法：POST
 - 请求参数：
 
@@ -105,7 +105,7 @@
     "data": {
         "user_name": "honora",
         "class": "学生",
-        "page_url":"https://api.bookmanage.com/v1/pages/student_page"
+        "page_url":"https://bookmanage.com/v1/api/getPages/student_page"
     },
     "code": 200
 }
@@ -125,7 +125,7 @@
 - API接口如下：
  1. 获取登录信息API
 - 功能：获取登录人员的用户名及密码信息，判断数据库中是否拥有该用户的数据。
-- 请求地址：https://api.bookmanage.com/v1/GET/pages?class_id=1
+- 请求地址：https://bookmanage.com/v1/api/getPages?class_id=1
 - 请求方法：GET
 - 请求参数：
 
@@ -141,7 +141,7 @@
 - API接口如下：
 3 借阅书籍API
 - 功能：将读者信息与书籍信息连接起来，确定借书
-- 请求地址：https://api.bookmanage.com/v1/infos
+- 请求地址：https://bookmanage.com/v1/api/brrowedInfos
 - 请求方法：POST
 - 请求参数：
 
@@ -156,12 +156,25 @@
 <code>
 {
     "info": "借书成功",
-    "data": {
+    "data": [{
         "user_name": "honora",
         "user_id": "1422",
         "book_name": "追风筝的人",
         "book_id": "4564757",
-    },
+    }
+    {
+        "user_name": "honora",
+        "user_id": "1422",
+        "book_name": "看见",
+        "book_id": "456",
+    }
+     {
+        "user_name": "honora",
+        "user_id": "1422",
+        "book_name": "活着",
+        "book_id": "142",
+    }
+    ],
     "code": 200
 }
 </code>
