@@ -1,0 +1,19 @@
+@startuml
+:students:
+:teachers:
+User <|-- students
+User <|-- teachers
+package 用户用例集{
+User -up->(修改密码)
+User -up->(修改个人信息)
+User -up->(查看成绩)
+User -up->(登录)
+User -up->(登出)
+}
+package 业务用例集{
+students -down->(选择课程)
+students -left->(查看成绩及批语)
+teachers -down->(开课选择)
+teachers -right->(批改实验)
+}
+@enduml
